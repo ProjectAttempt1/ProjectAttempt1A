@@ -17,7 +17,7 @@ class Item(BaseModel):
     name: str
     value: int
 
-stored_items = []
+stored_items = []  #fake database
 
 @app.get("/")
 def root():
