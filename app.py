@@ -14,8 +14,8 @@ app.add_middleware(
 )
 
 class Item(BaseModel):
-    name: str
-    value: int
+    patientName: str
+    patientAge: int
 
 stored_items = []  #fake database
 
