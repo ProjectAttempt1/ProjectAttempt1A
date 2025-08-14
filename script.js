@@ -1,4 +1,4 @@
-const API_url = ''; //Render URL 
+const API_url = 'https://projectattempt1a.onrender.com'; //Render URL 
 
 var patientDataInput = document.getElementById('patient-data-input');
 
