@@ -13,6 +13,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+class Item(BaseModel):
+    name: str
+    value: int
+
 stored_items = []
 
 @app.get("/")
@@ -26,3 +30,12 @@ def ping():
 @app.get("/error")
 def error_test():
     return JSONResponse(status_code=400, content={"error": "Test error"})
+
+@app.post("/submit")
+def submit_data(item: Item):
+    stored_items.append(item.dict())
+    return {"message": "Item stored successfully", "data": item.dict()}
+
+@app.get("/data")
+def get_data():
+    return {"stored_items": stored_items}
