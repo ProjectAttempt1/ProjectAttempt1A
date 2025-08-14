@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Demo</title>
+</head>
+<body>
+    <h1>Project Demo</h1>
+
+    <!--Default Patient Input Page-->
+    <div id="patient-data-input" class="view active" >
+        <form action="" id="patient-data-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            <br>
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <!--Stored Data we sent to the api-->
+        <h2>Patient Data</h2>
+        <pre id="patient-data-response"></pre>
+        <button id="display-data-button">View Patient Record</button>
+
+    </div>
+
+    <div id="patient-data-view" class="view">
+        <h1>Patient Data Stored</h1>
+        <pre id="stored-patient-data"></pre>
+        <button id="return-patient-input">Return</button>
+    </div>
+</body>
+</html>
