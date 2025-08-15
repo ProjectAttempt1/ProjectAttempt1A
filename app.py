@@ -18,6 +18,7 @@ class Item(BaseModel):
     patientAge: int
     patientHeight : int 
     patientGender: str
+    patientWeight: int
 
 stored_items = []  #fake database
 
