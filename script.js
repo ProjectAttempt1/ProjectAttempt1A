@@ -27,7 +27,7 @@ patientDataForm.addEventListener('submit', async(e) => {
     var patientGender = document.getElementById('gender').value;
     var patientWeight = parseInt(document.getElementById('weight').value);
     var patientDiastolicPressure = parseInt(document.getElementById('dia-pressure').value);
-    var patientSystolicPressure = parseInt(document,getElementById('sys-pressure').value);
+    var patientSystolicPressure = parseInt(document.getElementById('sys-pressure').value);
     var patientTemperature = parseInt(document.getElementById('temp').value);
 
 
