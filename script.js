@@ -24,17 +24,18 @@ patientDataForm.addEventListener('submit', async(e) => {
     var patientName = document.getElementById('name').value;
     var patientAge = parseInt(document.getElementById('age').value);
     var patientHeight = parseInt(document.getElementById('height').value);
-    var patientGender = document.getElementById('gender').value
+    var patientGender = document.getElementById('gender').value;
+    var patientWeight = parseInt(document.getElementById('weight').value);
 
     try{
         const response = await fetch(`${API_url}/submit`, {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
-            },body: JSON.stringify({patientName,patientAge,patientHeight,patientGender})// these are inputs collected from the form so add accordingly 
+            },body: JSON.stringify({patientName,patientAge,patientHeight,patientGender,patientWeight})// these are inputs collected from the form so add accordingly 
         });
         const responseBody = await response.json();
-        patientDataResponse.textContent = JSON.stringify(responseBody,null,4); //thes have to do with how many inputs we are taking in so increase count accordingly 
+        patientDataResponse.textContent = JSON.stringify(responseBody,null,5); //thes have to do with how many inputs we are taking in so increase count accordingly 
         patientDataForm.reset();
 
     } catch (err) {
@@ -51,7 +52,7 @@ display_data_button.addEventListener('click', async ()=> {
         const response = await fetch(`${API_url}/data`);
 
         const responseBody = await response.json();
-        patientDataStored.textContent = JSON.stringify(responseBody, null, 4);
+        patientDataStored.textContent = JSON.stringify(responseBody, null, 5);
         patientDataInput.classList.remove('active');
         patientDataView.classList.add('active');
     } catch (err) {
