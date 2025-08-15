@@ -17,7 +17,7 @@ var return_button = document.getElementById('return-patient-input');
 
 //handle data submitted by form and does the post request 
 
-form.addEventListener('submit', async(e) => {
+patientDataForm.addEventListener('submit', async(e) => {
 
     e.preventDefault(); //preventing default reload of webpage 
 
@@ -33,7 +33,7 @@ form.addEventListener('submit', async(e) => {
         });
         const responseBody = await response.json();
         patientDataResponse.textContent = JSON.stringify(responseBody,null,2); //thes have to do with how many inputs we are taking in so increase count accordingly 
-        form.reset();
+        patientDataForm.reset();
 
     } catch (err) {
         patientDataResponse.textContent = 'Error found: ' + err;
